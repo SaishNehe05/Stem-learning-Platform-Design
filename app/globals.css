@@ -1,0 +1,242 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette for creative and fun STEM theme */
+  --background: oklch(0.9789 0.0082 121.6272); /* Clean white background */
+  --foreground: oklch(0 0 0); /* Darker slate for better contrast */
+  --card: oklch(1.0000 0 0); /* Very light slate for cards */
+  --card-foreground: oklch(0 0 0); /* Emerald text on cards */
+  --popover: oklch(1.0000 0 0); /* White popover */
+  --popover-foreground: oklch(0 0 0); /* Dark slate text */
+  --primary: oklch(0.5106 0.2301 276.9656); /* Emerald green primary */
+  --primary-foreground: oklch(1.0000 0 0); /* White text on primary */
+  --secondary: oklch(0.7038 0.1230 182.5025); /* Bright emerald secondary */
+  --secondary-foreground: oklch(1.0000 0 0); /* White text on secondary */
+  --muted: oklch(0.9551 0 0); /* Light slate muted */
+  --muted-foreground: oklch(0.3211 0 0); /* Darker slate for better contrast */
+  --accent: oklch(0.7686 0.1647 70.0804); /* Amber accent for achievements */
+  --accent-foreground: oklch(0 0 0); /* White text on accent */
+  --destructive: oklch(0.6368 0.2078 25.3313); /* Red destructive */
+  --destructive-foreground: oklch(1.0000 0 0); /* White text on destructive */
+  --border: oklch(0 0 0); /* Light slate border */
+  --input: oklch(0.5555 0 0); /* White input background */
+  --ring: oklch(0.7853 0.1041 274.7134); /* Emerald focus ring */
+  --chart-1: oklch(0.5106 0.2301 276.9656); /* Emerald */
+  --chart-2: oklch(0.7038 0.1230 182.5025); /* Dark emerald */
+  --chart-3: oklch(0.7686 0.1647 70.0804); /* Amber */
+  --chart-4: oklch(0.6559 0.2118 354.3084); /* Purple */
+  --chart-5: oklch(0.7227 0.1920 149.5793); /* Red */
+  --radius: 1rem; /* More rounded for playful feel */
+  --sidebar: oklch(0.9789 0.0082 121.6272); /* Very light slate sidebar */
+  --sidebar-foreground: oklch(0 0 0); /* Dark slate sidebar text */
+  --sidebar-primary: oklch(0.5106 0.2301 276.9656); /* Emerald sidebar primary */
+  --sidebar-primary-foreground: oklch(1.0000 0 0); /* White text on sidebar primary */
+  --sidebar-accent: oklch(0.7686 0.1647 70.0804); /* Emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(0 0 0); /* White text on sidebar accent */
+  --sidebar-border: oklch(0 0 0); /* Light slate sidebar border */
+  --sidebar-ring: oklch(0.7853 0.1041 274.7134); /* Emerald sidebar ring */
+
+  /* Added custom colors for gamification */
+  --streak-fire: #f97316; /* Orange for streak flames */
+  --achievement-gold: #fbbf24; /* Gold for achievements */
+  --challenge-purple: #8b5cf6; /* Purple for daily challenges */
+  --xp-blue: #3b82f6; /* Blue for XP points */
+}
+
+.dark {
+  --background: oklch(0 0 0); /* Dark slate background */
+  --foreground: oklch(1.0000 0 0); /* Light slate text */
+  --card: oklch(0.2455 0.0217 257.2823); /* Dark slate cards */
+  --card-foreground: oklch(1.0000 0 0); /* Emerald card text */
+  --popover: oklch(0.2455 0.0217 257.2823); /* Dark slate popover */
+  --popover-foreground: oklch(1.0000 0 0); /* Light slate popover text */
+  --primary: oklch(0.6801 0.1583 276.9349); /* Emerald primary */
+  --primary-foreground: oklch(0 0 0); /* Dark text on primary */
+  --secondary: oklch(0.7845 0.1325 181.9120); /* Dark emerald secondary */
+  --secondary-foreground: oklch(0 0 0); /* White text on secondary */
+  --muted: oklch(0.3211 0 0); /* Medium slate muted */
+  --muted-foreground: oklch(0.8452 0 0); /* Lighter slate for better contrast in dark mode */
+  --accent: oklch(0.8790 0.1534 91.6054); /* Gold accent for achievements */
+  --accent-foreground: oklch(0 0 0); /* Dark text on accent */
+  --destructive: oklch(0.7106 0.1661 22.2162); /* Red destructive */
+  --destructive-foreground: oklch(0 0 0); /* White text on destructive */
+  --border: oklch(0.4459 0 0); /* Medium slate border */
+  --input: oklch(1.0000 0 0); /* Dark slate input */
+  --ring: oklch(0.6801 0.1583 276.9349); /* Emerald ring */
+  --chart-1: oklch(0.6801 0.1583 276.9349); /* Emerald */
+  --chart-2: oklch(0.7845 0.1325 181.9120); /* Light emerald */
+  --chart-3: oklch(0.8790 0.1534 91.6054); /* Gold */
+  --chart-4: oklch(0.7253 0.1752 349.7607); /* Light purple */
+  --chart-5: oklch(0.8003 0.1821 151.7110); /* Light red */
+  --sidebar: oklch(0 0 0); /* Dark slate sidebar */
+  --sidebar-foreground: oklch(1.0000 0 0); /* Light slate sidebar text */
+  --sidebar-primary: oklch(0.6801 0.1583 276.9349); /* Emerald sidebar primary */
+  --sidebar-primary-foreground: oklch(0 0 0); /* Dark text */
+  --sidebar-accent: oklch(0.8790 0.1534 91.6054); /* Light emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(0 0 0); /* Dark text */
+  --sidebar-border: oklch(1.0000 0 0); /* Medium slate sidebar border */
+  --sidebar-ring: oklch(0.6801 0.1583 276.9349); /* Emerald sidebar ring */
+
+  /* Dark mode gamification colors */
+  --streak-fire: #fb923c; /* Lighter orange for dark mode */
+  --achievement-gold: #fcd34d; /* Lighter gold for dark mode */
+  --challenge-purple: #a78bfa; /* Lighter purple for dark mode */
+  --xp-blue: #60a5fa; /* Lighter blue for dark mode */
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added custom gamification color tokens */
+  --color-streak-fire: var(--streak-fire);
+  --color-achievement-gold: var(--achievement-gold);
+  --color-challenge-purple: var(--challenge-purple);
+  --color-xp-blue: var(--xp-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "kern" 1;
+    cursor: default;
+  }
+
+  /* Enhanced animations for gamification */
+  .bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+
+  @keyframes bounce-gentle {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+
+  .wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  @keyframes wiggle {
+    0%,
+    7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%,
+    100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary);
+    }
+    to {
+      box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+    }
+  }
+
+  .streak-flame {
+    animation: streak-flame 1.5s ease-in-out infinite;
+  }
+
+  @keyframes streak-flame {
+    0%,
+    100% {
+      transform: scale(1) rotate(-2deg);
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(2deg);
+      filter: hue-rotate(10deg);
+    }
+  }
+
+  .achievement-shine {
+    animation: achievement-shine 3s ease-in-out infinite;
+  }
+
+  @keyframes achievement-shine {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+  }
+}
