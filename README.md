@@ -23,28 +23,28 @@ Installation
 
 &nbsp;  1. Clone the repository
 
-      **git clone https://github.com/your-username/stem-learning-platform.git
-      cd stem-learning-platform**
+      git clone https://github.com/your-username/stem-learning-platform.git
+      cd stem-learning-platform
 
 &nbsp;  2. Install dependencies
 
       Using pnpm (recommended):
 
 
-      **pnpm install**
+      pnpm install
 
   &nbsp;  Or using npm:
 
-     **npm install**
+     npm install
 
   
   3\. Running the Development Server
 
-     **pnpm run dev**
+     pnpm run dev
 
      or
 
-     **npm run dev**
+     npm run dev
 
   
   &nbsp;  Then open **http://localhost:3000** in your browser.
@@ -52,8 +52,8 @@ Installation
   
   4\. Build for Production
 
-     **pnpm run build
-     pnpm start**
+     pnpm run build
+     pnpm start
 
 
   Contributing
